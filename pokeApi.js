@@ -80,7 +80,7 @@ const imprimirTipos = (pokemon) => {
 
     for (const tipo of iconosTipos) {
         console.log(tipo);
-        //ºdivStats$$.appendChild();
+        //divStats$$.appendChild();
 
     }
 
