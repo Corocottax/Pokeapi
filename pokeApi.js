@@ -1,24 +1,41 @@
-const nombres = [];
 const iconosTipos = ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"];
 
 fetch("https://pokeapi.co/api/v2/pokemon/?limit=151").then((res) => res.json())
 .then((myRes) => {
 
     const pokemons = myRes.results;
-    extraerNombres(pokemons);
     
     pintarTodasLasCartas(pokemons);
+
+    const boton$$ = document.querySelector(".buscar");
+
+    boton$$.addEventListener("click", () => buscador(pokemons));
 
 
 });
 
-const extraerNombres = (pokemons) => {
+const buscador = (pokemons) => {
 
-    for (const pokemon of pokemons) {
+    const input$$ = document.querySelector("input");
+    const divEliminable$$ = document.querySelectorAll(".carta");
 
-        nombres.push(pokemon.name);
+    for (let i = 0; i < divEliminable$$.length; i++) {
 
+        const compararNombre$$ = divEliminable$$[i].querySelector("h1");
+
+        if (input$$.value.toLocaleLowerCase() != compararNombre$$.textContent) {
+            
+            divEliminable$$[i].remove();
+
+        } else {
+
+            divEliminable$$[i].style = ("background-color: gold; width: 200px; height: 300px; margin-bottom: 70px");
+
+        }
+        
     }
+
+    pintarTodasLasCartas(pokemons);
 
 };
 
@@ -46,8 +63,9 @@ const pintarTodasLasCartas = (pokemons) => {
                 const altura$$ = document.createElement("p");
                 const peso$$ = document.createElement("p");
                 const imagen$$ = document.createElement("img");
+                const divTipos$$ = document.createElement("div");
 
-                imprimirTipos(myRes);
+                /* imprimirTipos(myRes); */
 
                 div$$.classList.add("carta");
 
@@ -59,6 +77,7 @@ const pintarTodasLasCartas = (pokemons) => {
 
                 imagen$$.classList.add("imagenes");
                 divStats$$.classList.add("stats");
+                divTipos$$.classList.add("tipos");
 
                 divStats$$.appendChild(altura$$);
                 divStats$$.appendChild(peso$$);
@@ -66,6 +85,7 @@ const pintarTodasLasCartas = (pokemons) => {
                 div$$.appendChild(nombre$$);
                 div$$.appendChild(imagen$$);
                 div$$.appendChild(divStats$$);
+                div$$.appendChild(divTipos$$);
                 divPrincipal$$.appendChild(div$$);
                 
             });
@@ -76,12 +96,16 @@ const pintarTodasLasCartas = (pokemons) => {
 
 };
 
-const imprimirTipos = (pokemon) => {
+
+
+/* const imprimirTipos = (pokemon) => {
 
     for (const tipo of iconosTipos) {
-        console.log(tipo);
-        //divStats$$.appendChild();
+
+        const tipo$$ = document.createElement("img");
+
+        //divtipos$$.appendChild(tipo$$);
 
     }
 
-}
+} */
