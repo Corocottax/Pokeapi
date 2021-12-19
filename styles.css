@@ -104,3 +104,44 @@ button {
     justify-content: space-evenly;
 
 }
+
+.tipos {
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 7px;
+    align-items: center;
+
+}
+
+.tipo {
+
+    width: 10px;
+
+}
+
+.filtroTipos {
+
+    display: flex;
+    width: 80%;
+    margin: 5% 10%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.filtroTipos img {
+
+    width: 30px;
+    margin: 10px;
+
+}
+
+.filtroTipos img:hover {
+
+    width: 40px;
+    margin: 5px;
+
+}

@@ -1,4 +1,5 @@
 const iconosTipos = ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"];
+let inputAnterior;
 
 fetch("https://pokeapi.co/api/v2/pokemon/?limit=151").then((res) => res.json())
 .then((myRes) => {
@@ -23,23 +24,32 @@ const buscador = (pokemons) => {
 
         const compararNombre$$ = divEliminable$$[i].querySelector("h1");
 
-        if (input$$.value.toLocaleLowerCase() != compararNombre$$.textContent) {
+        if (input$$.value.toLowerCase() != compararNombre$$.textContent) {
             
             divEliminable$$[i].remove();
 
-        } else {
+        } else if (inputAnterior != input$$.value.toLowerCase()){
+
+            console.log(input$$.value.toLowerCase());
+            console.log(inputAnterior);
 
             divEliminable$$[i].style = ("background-color: gold; width: 200px; height: 300px; margin-bottom: 70px");
+
+        } else {
+
+            console.log(divEliminable$$[i]);
 
         }
         
     }
 
-    pintarTodasLasCartas(pokemons);
+    inputAnterior = input$$.value.toLowerCase();
+
+    pintarTodasLasCartas(pokemons, inputAnterior);
 
 };
 
-const pintarTodasLasCartas = (pokemons) => {
+const pintarTodasLasCartas = (pokemons, esteNoDeboImprimirlo) => {
 
     const divPrincipal$$ = document.createElement("div");
 
@@ -56,37 +66,41 @@ const pintarTodasLasCartas = (pokemons) => {
                 let peso = Math.round(myRes.weight/10 * 100) / 100;
                 let imagen = myRes.sprites.other.dream_world.front_default;
 
-                const div$$ = document.createElement("div");
-                const divStats$$ = document.createElement("div");
-                const id$$ = document.createElement("h3");
-                const nombre$$ = document.createElement("h1");
-                const altura$$ = document.createElement("p");
-                const peso$$ = document.createElement("p");
-                const imagen$$ = document.createElement("img");
-                const divTipos$$ = document.createElement("div");
+                if (esteNoDeboImprimirlo != nombre) {
 
-                /* imprimirTipos(myRes); */
+                    const div$$ = document.createElement("div");
+                    const divStats$$ = document.createElement("div");
+                    const id$$ = document.createElement("h3");
+                    const nombre$$ = document.createElement("h1");
+                    const altura$$ = document.createElement("p");
+                    const peso$$ = document.createElement("p");
+                    const imagen$$ = document.createElement("img");
+                    const divTipos$$ = document.createElement("div");
 
-                div$$.classList.add("carta");
+                    imprimirTipos(myRes, divTipos$$);
 
-                id$$.textContent = (id);
-                nombre$$.textContent = (nombre);
-                altura$$.textContent = (altura + " m");
-                peso$$.textContent = (peso + " Kg");
-                imagen$$.setAttribute("src", imagen);
+                    div$$.classList.add("carta");
 
-                imagen$$.classList.add("imagenes");
-                divStats$$.classList.add("stats");
-                divTipos$$.classList.add("tipos");
+                    id$$.textContent = (id);
+                    nombre$$.textContent = (nombre);
+                    altura$$.textContent = (altura + " m");
+                    peso$$.textContent = (peso + " Kg");
+                    imagen$$.setAttribute("src", imagen);
 
-                divStats$$.appendChild(altura$$);
-                divStats$$.appendChild(peso$$);
-                div$$.appendChild(id$$);
-                div$$.appendChild(nombre$$);
-                div$$.appendChild(imagen$$);
-                div$$.appendChild(divStats$$);
-                div$$.appendChild(divTipos$$);
-                divPrincipal$$.appendChild(div$$);
+                    imagen$$.classList.add("imagenes");
+                    divStats$$.classList.add("stats");
+                    divTipos$$.classList.add("tipos");
+
+                    divStats$$.appendChild(altura$$);
+                    divStats$$.appendChild(peso$$);
+                    div$$.appendChild(id$$);
+                    div$$.appendChild(nombre$$);
+                    div$$.appendChild(imagen$$);
+                    div$$.appendChild(divStats$$);
+                    div$$.appendChild(divTipos$$);
+                    divPrincipal$$.appendChild(div$$);
+                    
+                }
                 
             });
 
@@ -98,14 +112,27 @@ const pintarTodasLasCartas = (pokemons) => {
 
 
 
-/* const imprimirTipos = (pokemon) => {
+const imprimirTipos = (pokemon, div) => {
 
-    for (const tipo of iconosTipos) {
+    for (const tipo of pokemon.types) {
+        
+        for (const tipoImagen of iconosTipos) {
+            
+            if (tipoImagen === tipo.type.name) {
+                
+                const imagenTipo = document.createElement("img");
 
-        const tipo$$ = document.createElement("img");
+                imagenTipo.classList.add("tipo");
+                imagenTipo.setAttribute("src", "./imgs/icons/" + tipoImagen + ".svg");
 
-        //divtipos$$.appendChild(tipo$$);
+                div.appendChild(imagenTipo);
+
+            }
+
+        }
 
     }
 
-} */
+    
+
+}
