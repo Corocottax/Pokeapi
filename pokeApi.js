@@ -1,4 +1,4 @@
-const iconosTipos = ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"];
+const iconosTipos = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"];
 let inputAnterior;
 
 fetch("https://pokeapi.co/api/v2/pokemon/?limit=151").then((res) => res.json())
@@ -11,6 +11,17 @@ fetch("https://pokeapi.co/api/v2/pokemon/?limit=151").then((res) => res.json())
     const boton$$ = document.querySelector(".buscar");
 
     boton$$.addEventListener("click", () => buscador(pokemons));
+
+    const divFilter$$ = document.querySelector(".filtroTipos");
+    const imagenesTipos$$ = divFilter$$.querySelectorAll("img");
+
+    for (const imagenTipo of imagenesTipos$$) {
+
+        let tipo = imagenTipo.className;
+        
+        imagenTipo.addEventListener("click", () => filtrar(tipo, pokemons));
+
+    }
 
 
 });
@@ -34,10 +45,6 @@ const buscador = (pokemons) => {
             console.log(inputAnterior);
 
             divEliminable$$[i].style = ("background-color: gold; width: 200px; height: 300px; margin-bottom: 70px");
-
-        } else {
-
-            console.log(divEliminable$$[i]);
 
         }
         
@@ -124,6 +131,7 @@ const imprimirTipos = (pokemon, div) => {
 
                 imagenTipo.classList.add("tipo");
                 imagenTipo.setAttribute("src", "./imgs/icons/" + tipoImagen + ".svg");
+                imagenTipo.classList.add(`${tipoImagen}`);
 
                 div.appendChild(imagenTipo);
 
@@ -133,6 +141,43 @@ const imprimirTipos = (pokemon, div) => {
 
     }
 
-    
+}
+
+const filtrar = (tipo, pokemons) => {
+
+    const divEliminable$$ = document.querySelectorAll(".carta");
+
+    for (let i = 0; i < divEliminable$$.length; i++) {
+
+        let tipoDefinitivo = "";
+
+        for (let j = 0; j < divEliminable$$[i].lastChild.childNodes.length; j++) {
+            
+            const tiposDeCadaPokemon$$ = divEliminable$$[i].lastChild.childNodes[j].className;
+
+            for (let k = 5; k < tiposDeCadaPokemon$$.length; k++) {
+                
+                tipoDefinitivo += tiposDeCadaPokemon$$[k];
+                
+            }
+            
+            console.log(tipoDefinitivo);
+            
+        }
+
+        if (tipoDefinitivo.includes(tipo)) {
+                
+            divEliminable$$[i].style = ("background-color: #0059b3; color: white; border-color: white");
+            
+
+        } else {
+
+            divEliminable$$[i].remove();
+
+        }
+        
+    }
+
+    pintarTodasLasCartas(pokemons);
 
 }
