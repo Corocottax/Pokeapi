@@ -1,12 +1,13 @@
 const iconosTipos = ["bug", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"];
 let inputAnterior;
+let string = "";
 
 fetch("https://pokeapi.co/api/v2/pokemon/?limit=151").then((res) => res.json())
 .then((myRes) => {
 
     const pokemons = myRes.results;
     
-    pintarTodasLasCartas(pokemons);
+    pintarTodasLasCartas(pokemons, string);
 
     const boton$$ = document.querySelector(".buscar");
 
@@ -41,9 +42,6 @@ const buscador = (pokemons) => {
 
         } else if (inputAnterior != input$$.value.toLowerCase()){
 
-            console.log(input$$.value.toLowerCase());
-            console.log(inputAnterior);
-
             divEliminable$$[i].style = ("background-color: gold; width: 200px; height: 300px; margin-bottom: 70px");
 
         }
@@ -56,7 +54,7 @@ const buscador = (pokemons) => {
 
 };
 
-const pintarTodasLasCartas = (pokemons, esteNoDeboImprimirlo) => {
+const pintarTodasLasCartas = (pokemons, estoNoDeboImprimirlo) => {
 
     const divPrincipal$$ = document.createElement("div");
 
@@ -73,7 +71,7 @@ const pintarTodasLasCartas = (pokemons, esteNoDeboImprimirlo) => {
                 let peso = Math.round(myRes.weight/10 * 100) / 100;
                 let imagen = myRes.sprites.other.dream_world.front_default;
 
-                if (esteNoDeboImprimirlo != nombre) {
+                if (!estoNoDeboImprimirlo.includes(nombre)) {
 
                     const div$$ = document.createElement("div");
                     const divStats$$ = document.createElement("div");
@@ -146,6 +144,7 @@ const imprimirTipos = (pokemon, div) => {
 const filtrar = (tipo, pokemons) => {
 
     const divEliminable$$ = document.querySelectorAll(".carta");
+    let pokemonsQueNoDeboDuplicar = "";
 
     for (let i = 0; i < divEliminable$$.length; i++) {
 
@@ -161,23 +160,24 @@ const filtrar = (tipo, pokemons) => {
                 
             }
             
-            console.log(tipoDefinitivo);
-            
         }
 
         if (tipoDefinitivo.includes(tipo)) {
                 
             divEliminable$$[i].style = ("background-color: #0059b3; color: white; border-color: white");
+            const h1$$ = divEliminable$$[i].querySelector("h1");
+            pokemonsQueNoDeboDuplicar += h1$$.textContent + " ";
+            console.log(pokemonsQueNoDeboDuplicar);
             
 
         } else {
 
             divEliminable$$[i].remove();
 
-        }
+        } 
         
     }
 
-    pintarTodasLasCartas(pokemons);
+    pintarTodasLasCartas(pokemons, pokemonsQueNoDeboDuplicar);
 
 }

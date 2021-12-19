@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fuzzy+Bubbles&family=M+PLUS+1+Code:wght@200&family=VT323&display=swap');
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+
+    font-family: 'Bebas Neue', cursive;
+    background-color: #356afd;
+    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+
+}
+
+nav ul{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+
+}
+
+nav ul li {
+
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 2px black;
+
+}
+
+form {
+
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+input {
+
+    width: 30%;
+    margin-right: 10px;
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+button {
+
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+    background-color: whitesmoke;
+
+}
+
+
+.pokebola {
+
+    width: 100px;
+
+}
+
+.OAK {
+
+    margin: 20px;
+    margin-top: 50px;
+    width: 100px;
+
+}
+
+.bubble {
+    position: relative;
+    background: whitesmoke;
+    color: #000000;
+    font-family: VT323;
+    font-size: 17px;
+    text-align: center;
+    width: 285px;
+    height: 70px;
+    border-radius: 17px;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: transparent whitesmoke;
+    border-width: 10px 26px 10px 0;
+    top: 72%;
+    left: -26px;
+    margin-top: -15px;
+}
+
+.flechita {
+
+    font-size: 10px;
+
+}
+
+.funcionOAK {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
