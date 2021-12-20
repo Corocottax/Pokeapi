@@ -63,11 +63,26 @@ nav ul li {
 
 }
 
+.divEnglobador {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
 .divPrincipal {
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 500px;
+
+}
+
+.divPrincipal:hover {
+
+    cursor:url('https://www.pngkit.com/png/full/13-134266_cartoon-hammer-png-picture-royalty-free-stock-animated.png'), auto;
 
 }
 
@@ -83,6 +98,15 @@ nav ul li {
     height: 50px;
     border-radius: 20px;
     border: none;
+    border: solid black 3px;
+
+}
+
+.botonJugar:hover {
+
+    border: solid white 3px;
+    color: white;
+    background-color: black;
 
 }
 
@@ -98,5 +122,29 @@ nav ul li {
     width: 100%;
     display: flex;
     justify-content: center;
+
+}
+
+.contador {
+
+    margin-left: 10px;
+    font-size: 45px;
+    color: white;
+
+}
+
+.divPuntuacion {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+}
+
+.divPuntuacion p {
+
+    color: white;
+    font-size: 45px;
 
 }
