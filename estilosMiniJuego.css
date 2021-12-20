@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fuzzy+Bubbles&family=M+PLUS+1+Code:wght@200&family=VT323&display=swap');
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+
+    font-family: VT323;
+    background-color: #1c8067;
+    background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+
+}
+
+nav ul{
+
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+
+}
+
+nav ul li {
+
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 2px black;
+
+}
+
+.presentacion {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+
+}
+
+.presentacion p {
+
+    margin: 0px 10px;
+    text-align: center;
+
+}
+
+.cabecera {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-right: 10%;
+    align-items: center;
+
+}
+
+.divPrincipal {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.suelos {
+
+    width: 150px;
+
+}
+
+.botonJugar {
+
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+
+}
+
+.botonJugar p {
+
+    font-family: VT323;
+    font-size: 30px;
+}
+
+.divBoton {
+
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}

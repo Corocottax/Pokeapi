@@ -63,7 +63,7 @@ const pintarTodasLasCartas = (pokemons, estoNoDeboImprimirlo) => {
     for (const pokemon of pokemons) {
         
         fetch(`${pokemon.url}`).then((res) => res.json())
-        .then((myRes) => {               
+        .then((myRes) => {
                 
                 let id = myRes.id;
                 let nombre = myRes.name;
@@ -112,13 +112,6 @@ const pintarTodasLasCartas = (pokemons, estoNoDeboImprimirlo) => {
     }
 
     document.body.appendChild(divPrincipal$$);
-
-    const subir = document.createElement("a");
-
-    subir.setAttribute("href", "#navbar");
-    subir.innerHTML = `<p>🔺</p>`;
-
-    document.body.appendChild(subir);
 
 };
 

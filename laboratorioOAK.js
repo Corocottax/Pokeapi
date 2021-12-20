@@ -142,3 +142,36 @@ const generarPokemonAleatorio = () => {
     }
 
 }
+
+
+const añadirALaLista = document.querySelector(".botonTareas");
+
+añadirALaLista.addEventListener("click", () => añadirElementoALaLista());
+
+const añadirElementoALaLista = () => {
+
+    const tareaAAñadir = document.querySelector(".inputTareas");
+    const ulTareas = document.querySelector(".ul-tareas");
+    const botonEliminar = document.createElement("button");
+
+    const liTarea = document.createElement("li");
+    liTarea.classList.add("liTareas");
+    botonEliminar.classList.add("btn-delete");
+    botonEliminar.textContent = ("X")
+
+    liTarea.textContent = (tareaAAñadir.value);
+
+    botonEliminar.addEventListener("click", () => borrarElementoDeLaLista(liTarea, botonEliminar));
+
+    ulTareas.appendChild(liTarea);
+    liTarea.appendChild(botonEliminar);
+
+}
+
+
+const borrarElementoDeLaLista = (liTareaEliminar, botonEliminar) => {
+
+    liTareaEliminar.remove();
+    botonEliminar.remove();
+
+}

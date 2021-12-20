@@ -134,7 +134,7 @@ button {
 
     background-color: #c73f51;
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
-    height: 200px;
+    height: auto;
     width: 280px;
     margin: 30px;
     display: flex;
@@ -171,5 +171,46 @@ button {
 
     width: 30px;
     border-radius: 0px;
+
+}
+
+.li-container {
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+}
+  
+ul {
+
+    padding: 0;
+    width: 100%;
+
+}
+  
+.liTareas {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid white 0.2px;
+    margin-bottom: 5px;
+
+}
+  
+.btn-delete {
+    
+    margin-left: 30px;
+    border-radius: 0px;
+    background-color: transparent;
+    border: none;
+
+}
+
+.btn-delete:hover {
+
+    color: white;
 
 }
