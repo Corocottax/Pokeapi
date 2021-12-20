@@ -113,6 +113,13 @@ const pintarTodasLasCartas = (pokemons, estoNoDeboImprimirlo) => {
 
     document.body.appendChild(divPrincipal$$);
 
+    const subir = document.createElement("a");
+
+    subir.setAttribute("href", "#navbar");
+    subir.innerHTML = `<p>🔺</p>`;
+
+    document.body.appendChild(subir);
+
 };
 
 

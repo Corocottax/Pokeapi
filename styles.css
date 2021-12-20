@@ -2,10 +2,13 @@
 
 
 * {
+
     text-decoration: none;
     margin: 0;
     padding: 0;
     list-style-type: none;
+    scroll-behavior: smooth;
+
 }
 
 body {
