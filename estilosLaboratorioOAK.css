@@ -9,7 +9,7 @@
 
 body {
 
-    font-family: 'Bebas Neue', cursive;
+    font-family: VT323;
     background-color: #356afd;
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
 
@@ -67,6 +67,7 @@ button {
 .pokebola {
 
     width: 100px;
+    
 
 }
 
@@ -82,7 +83,6 @@ button {
     position: relative;
     background: whitesmoke;
     color: #000000;
-    font-family: VT323;
     font-size: 17px;
     text-align: center;
     width: 285px;
@@ -90,6 +90,7 @@ button {
     border-radius: 17px;
     margin-top: 50px;
     padding: 5px;
+    text-align: center;
 }
 
 .bubble:after {

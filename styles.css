@@ -1,4 +1,5 @@
-/* font-family: 'Bebas Neue', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fuzzy+Bubbles&family=M+PLUS+1+Code:wght@200&family=VT323&display=swap');
+
 
 * {
     text-decoration: none;
@@ -9,7 +10,7 @@
 
 body {
 
-    font-family: 'Bebas Neue', cursive;
+    font-family: VT323;
     background-color: #8a192c;
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
 
@@ -86,6 +87,12 @@ button {
 
     background-color: #6a90fa;
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+
+}
+
+.carta:hover {
+
+    border-color: whitesmoke;
 
 }
 
