@@ -82,6 +82,14 @@ nav ul li {
 
 }
 
+.juego {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
 .suelos {
 
     width: 150px;
