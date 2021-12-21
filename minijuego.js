@@ -113,7 +113,7 @@ const comprobacion = () => {
 
     } else {
 
-        divPrincipal.innerHTML = `<div class="resultado"><img src="./imgs/derrota.gif" /><h3>DERROTA</h3></div>`;
+        divPrincipal.innerHTML = `<div class="resultado"><img src="./imgs/Derrota.gif" /><h3>DERROTA</h3></div>`;
 
     }
 
