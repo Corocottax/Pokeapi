@@ -63,6 +63,12 @@ nav ul li {
 
 }
 
+.cabecera h1 {
+
+    text-align: center;
+
+}
+
 .divEnglobador {
 
     width: 100%;
@@ -109,6 +115,7 @@ nav ul li {
     border-radius: 20px;
     border: none;
     border: solid black 3px;
+    background-color: white;
 
 }
 

@@ -94,8 +94,7 @@ const mazazo = (suelo) => {
 
     if (suelo.className.includes("digglet")) {
         
-        puntuacion += 5; 
-        console.log(puntuacion);
+        puntuacion += 5;
             
         let actualizarPuntuacion = document.querySelector(".puntuacion");
         actualizarPuntuacion.textContent = ("Puntuación: " + puntuacion);
@@ -120,6 +119,18 @@ const comprobacion = () => {
 }
 
 
+divPrincipal.addEventListener("click", () => moverMartillo());
 
 
+const moverMartillo = () => {
+    
+    setTimeout(() => {
+
+        divPrincipal.style = ("cursor: url('./imgs/hammer.png'), auto");
+        
+    }, 200);
+
+    divPrincipal.style = ("cursor: url('./imgs/hammer2.png'), auto");
+
+}
 
