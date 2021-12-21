@@ -10,6 +10,11 @@ const pintarJuego = () => {
 
     divPrincipal.innerHTML = `<div class ="juego"></div>`;
 
+    puntuacion = 0;
+    let actualizarPuntuacion = document.querySelector(".puntuacion");
+    actualizarPuntuacion.textContent = ("Puntuación: " + puntuacion);
+
+
     for (let i = 0; i < 9; i++) {
         
         const div$$ = document.querySelector(".juego");
