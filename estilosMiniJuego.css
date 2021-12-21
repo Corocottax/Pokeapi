@@ -78,12 +78,17 @@ nav ul li {
     justify-content: center;
     max-width: 500px;
 
-    /* cursor: crosshair; */
-    cursor: url("https://cdn0.iconfinder.com/data/icons/game-2-2/50/113-512.png"), auto;
+    cursor: url("./imgs/hammer.png"), auto;
 
 }
 
 .suelos {
+
+    width: 150px;
+
+}
+
+.digglet {
 
     width: 150px;
 
@@ -143,5 +148,26 @@ nav ul li {
 
     color: white;
     font-size: 45px;
+
+}
+
+.resultado {
+
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.resultado img {
+
+    width: 200px;
+
+}
+
+.resultado h3 {
+
+    font-size: 50px;
 
 }
