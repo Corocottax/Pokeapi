@@ -78,11 +78,8 @@ nav ul li {
     justify-content: center;
     max-width: 500px;
 
-}
-
-.divPrincipal:hover {
-
-    cursor:url('https://www.pngkit.com/png/full/13-134266_cartoon-hammer-png-picture-royalty-free-stock-animated.png'), auto;
+    /* cursor: crosshair; */
+    cursor: url("https://cdn0.iconfinder.com/data/icons/game-2-2/50/113-512.png"), auto;
 
 }
 

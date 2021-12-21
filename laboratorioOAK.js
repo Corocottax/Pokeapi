@@ -166,6 +166,8 @@ const añadirElementoALaLista = () => {
     ulTareas.appendChild(liTarea);
     liTarea.appendChild(botonEliminar);
 
+    tareaAAñadir.value = "";
+
 }
 
 

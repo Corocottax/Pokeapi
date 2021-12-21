@@ -2,6 +2,7 @@ const divPrincipal = document.querySelector(".divPrincipal");
 const urlSuelo = "./imgs/suelo.gif";
 const urlDigglet = "./imgs/digglet.gif";
 const botonJugar = document.querySelector(".botonJugar");
+let puntuacion = 0;
 
 botonJugar.addEventListener("click", () => jugar());
 
@@ -9,14 +10,10 @@ for (let i = 0; i < 9; i++) {
     
     const suelo = document.createElement("img");
 
+    suelo.addEventListener("click", () => mazazo());
+
     suelo.setAttribute("src", urlSuelo);
     suelo.classList.add("suelos");
-
-    if (suelo.className === "digglet") {
-        
-        
-
-    }
 
     divPrincipal.appendChild(suelo);
     
@@ -66,6 +63,25 @@ const jugar = () => {
 
 }
 
+
+const mazazo = () => {
+
+    const divPrincipal = document.querySelector(".divPrincipal");
+    const suelos = divPrincipal.querySelectorAll("img");
+
+    for (let i = 0; i < suelos.length; i++) {
+
+            const suelo = suelos[i];
+
+            puntuacion += 5; 
+            console.log(puntuacion);
+        
+            let actualizarPuntuacion = suelo.querySelector("");
+            actualizarPuntuacion.textContent = ("Puntuación: " + puntuacion);
+        
+    }
+
+}
 
 
 
